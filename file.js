@@ -8,20 +8,21 @@ const firebaseConfig = {
     appId: "1:117353090141:web:e9ee670b1aa2e852ef51b4"
 };
 
+
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
 
 // reference your database
 var contactFormDB = firebase.database().ref("contactForm");
 
-document.getElementById("profile-info-form").addEventListener("submit", submitForm);
+document.getElementById("contactForm").addEventListener("submit", submitForm);
 
 function submitForm(e) {
   e.preventDefault();
 
-  var name = getElementVal("username");
-  var emailid = getElementVal("password");
-  
+  var username = getElementVal("username");
+  var password = getElementVal("password");
+
   saveMessages(username, password);
 
   //   enable alert
